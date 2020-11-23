@@ -404,9 +404,11 @@ var Aromanize = {
 		}
 		
 		var rom = '';
+		var romArr = [];
 		var curr = null, next;
 		var skipJaeum = false; // Indicates jaeum of current iteration to be skipped
 		for(var i = 0; i <= args.text.length; i++) {
+			// console.log(args.text, rom)
 			// If next is hangul syllable, separate it into jamo
 			// 0xAC00 is the first hangul syllable in unicode table
 			// 0x1100 is the first hangul jaeum in unicode table
@@ -511,11 +513,12 @@ var Aromanize = {
 					}
 				}
 				rom += res;
+				romArr.push(res);
 			}
 			
 			curr = next;
 		}
-		return rom;
+		return [rom, romArr];
 	},
 	
 	////////////////////////////////////////////////////////////////////
