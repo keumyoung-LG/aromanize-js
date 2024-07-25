@@ -926,6 +926,7 @@ var Aromanize = {
     var curr = null,
       next;
     var skipJaeum = false; // Indicates jaeum of current iteration to be skipped
+    var nextIdx;
     for (var i = 0; i <= args.text.length; i++) {
       // console.log(args.text, rom)
       // If next is hangul syllable, separate it into jamo
@@ -1098,7 +1099,7 @@ var Aromanize = {
 
 if (
   (typeof AROMANIZE_EXTEND_STRING == 'undefined' || AROMANIZE_EXTEND_STRING) &&
-  (typeof document == 'undefined' || /\?(.+&)?base(=true)?(&.+)?$/.test(document.currentScript.src) == false)
+  (typeof document == 'undefined' || /\?(.+&)?base(=true)?(&.+)?$/.test(document.currentScript?.src) == false)
 ) {
   // romanize()
   if (typeof String.prototype.romanize == 'undefined') {
