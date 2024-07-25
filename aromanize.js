@@ -1098,7 +1098,7 @@ var Aromanize = {
 
 if (
   (typeof AROMANIZE_EXTEND_STRING == 'undefined' || AROMANIZE_EXTEND_STRING) &&
-  (typeof document == 'undefined' || /\?(.+&)?base(=true)?(&.+)?$/.test(document.currentScript?.src) == false)
+  (typeof document == 'undefined' || /\?(.+&)?base(=true)?(&.+)?$/.test(document.currentScript.src) == false)
 ) {
   // romanize()
   if (typeof String.prototype.romanize == 'undefined') {
